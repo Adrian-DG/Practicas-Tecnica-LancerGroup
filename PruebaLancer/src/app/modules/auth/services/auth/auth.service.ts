@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { GenericService } from '../../shared/services/generic.service';
-import { IUserRegister } from '../DTO/iuser-register';
-import { IUserAuthenticatedResponse } from '../responses/iuser-authenticated-response';
+import { GenericService } from '../../../shared/services/generic.service';
+import { IUserRegister } from '../../DTO/iuser-register';
+import { IUserAuthenticatedResponse } from '../../responses/iuser-authenticated-response';
 
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
