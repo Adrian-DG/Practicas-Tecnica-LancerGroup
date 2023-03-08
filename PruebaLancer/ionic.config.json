@@ -1,0 +1,7 @@
+{
+  "name": "PruebaLancer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
