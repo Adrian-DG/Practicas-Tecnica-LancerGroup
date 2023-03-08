@@ -5,6 +5,8 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
 
+import { IonicStorageModule } from '@ionic/storage-angular';
+
 @NgModule({
 	declarations: [],
 	imports: [CommonModule, AuthRoutingModule, HttpClientModule, SharedModule],
