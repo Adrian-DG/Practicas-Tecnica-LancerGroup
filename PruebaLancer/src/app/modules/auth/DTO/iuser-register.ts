@@ -5,5 +5,5 @@ export interface IUserRegister {
 	userPassword: string;
 	type: number;
 	answer: string;
-	userProfilePic: string;
+	userProfilePic: string | null;
 }
