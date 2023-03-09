@@ -8,7 +8,7 @@
 		>
 	</ion-card-header>
 	<ion-card-content>
-		<form [formGroup]="registerForm">
+		<form [formGroup]="registerForm" (ngSubmit)="saveUserInfo()">
 			<ion-item [counter]="true">
 				<ion-label>Nombre</ion-label>
 				<ion-input formControlName="name" maxlength="30"></ion-input>
@@ -34,6 +34,7 @@
 			<ion-item [counter]="true">
 				<ion-label>Contraseña</ion-label>
 				<ion-input
+					type="password"
 					formControlName="password"
 					minlength="8"
 					maxlength="16"
@@ -42,12 +43,17 @@
 			<ion-item [counter]="true">
 				<ion-label>Confirmar Contraseña</ion-label>
 				<ion-input
+					type="password"
 					formControlName="confirmPassword"
 					minlength="8"
 					maxlength="16"
 				></ion-input>
 			</ion-item>
-			<ion-button [disabled]="!registerForm.valid" style="width: 100%">
+			<ion-button
+				type="submit"
+				[disabled]="!registerForm.valid"
+				style="width: 100%"
+			>
 				Siguiente
 			</ion-button>
 		</form>
