@@ -1,0 +1,59 @@
+<ion-card>
+	<ion-card-header>
+		<ion-icon name="person-circle-outline"></ion-icon>
+		<ion-card-title>User Information</ion-card-title>
+		<ion-card-subtitle
+			>The following info is neccesary to start with the
+			app.</ion-card-subtitle
+		>
+	</ion-card-header>
+	<ion-card-content>
+		<form [formGroup]="registerForm">
+			<ion-item [counter]="true">
+				<ion-label>Nombre</ion-label>
+				<ion-input formControlName="name" maxlength="30"></ion-input>
+			</ion-item>
+			<ion-item [counter]="true">
+				<ion-label>Apellido</ion-label>
+				<ion-input
+					formControlName="lastname"
+					maxlength="30"
+				></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label>Correo</ion-label>
+				<ion-input formControlName="email"></ion-input>
+			</ion-item>
+			<ion-item [counter]="true">
+				<ion-label>Telefono</ion-label>
+				<ion-input
+					formControlName="phoneNumber"
+					maxlength="10"
+				></ion-input>
+			</ion-item>
+			<ion-item [counter]="true">
+				<ion-label>Contraseña</ion-label>
+				<ion-input
+					formControlName="password"
+					minlength="8"
+					maxlength="16"
+				></ion-input>
+			</ion-item>
+			<ion-item [counter]="true">
+				<ion-label>Confirmar Contraseña</ion-label>
+				<ion-input
+					formControlName="confirmPassword"
+					minlength="8"
+					maxlength="16"
+				></ion-input>
+			</ion-item>
+			<ion-button
+				[disabled]="!registerForm.valid"
+				[routerLink]="['/registro/ubicacion']"
+				style="width: 100%"
+			>
+				Siguiente
+			</ion-button>
+		</form>
+	</ion-card-content>
+</ion-card>

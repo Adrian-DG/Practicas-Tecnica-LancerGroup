@@ -3,11 +3,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 	{
-		path: 'auth',
+		path: 'registro',
 		loadChildren: () =>
 			import('./modules/auth/auth.module').then((m) => m.AuthModule),
 	},
-	{ path: '', redirectTo: 'auth', pathMatch: 'full' },
+	{ path: '', redirectTo: 'registro', pathMatch: 'full' },
 ];
 
 @NgModule({

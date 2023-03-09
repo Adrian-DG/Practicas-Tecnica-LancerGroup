@@ -1,10 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormularyComponent } from './pages/formulary/formulary.component';
+import { IndexComponent } from './pages/index/index.component';
+import { LocationComponent } from './pages/location/location.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+	{
+		path: '',
+		component: IndexComponent,
+		children: [
+			{ path: 'informacion', component: FormularyComponent },
+			{ path: 'ubicacion', component: LocationComponent },
+			{ path: 'perfil', component: ProfileComponent },
+		],
+	},
+];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
-export class AuthRoutingModule { }
+export class AuthRoutingModule {}
