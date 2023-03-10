@@ -14,7 +14,7 @@ const routes: Routes = [
 			{ path: 'ingresar', component: LoginComponent },
 			{ path: 'informacion', component: FormularyComponent },
 			{ path: 'ubicacion', component: LocationComponent },
-			{ path: 'perfil', component: ProfileComponent },
+			{ path: 'imagen', component: ProfileComponent },
 		],
 	},
 ];

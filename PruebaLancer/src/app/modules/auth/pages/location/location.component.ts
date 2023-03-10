@@ -12,11 +12,8 @@ export class LocationComponent {
 	constructor(private _gps: GeolocationService, private $router: Router) {}
 
 	getLocation(): void {
-		this._gps.getCurrentPosition().then((value: IIGPSCoordinates) => {
-			// TODO: save to LocalStorage
-			// localStorage.setItem('latitude', value.latitude.toString());
-			// localStorage.setItem('longitude', value.longitude.toString());
-			this.$router.navigate(['registro/perfil']);
+		this._gps.getCurrentPosition().then(() => {
+			this.$router.navigate(['registro/imagen']);
 		});
 	}
 }

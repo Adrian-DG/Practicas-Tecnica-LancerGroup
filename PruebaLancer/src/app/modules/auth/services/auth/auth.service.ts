@@ -46,10 +46,17 @@ export class AuthService extends GenericService {
 		this.$http
 			.post<IUserAuthenticatedResponse>(
 				`${this.endPoint}/Get_ToketLogin`,
-				model
+				model,
+				{ headers: this.getHeaders() }
 			)
 			.subscribe((response: IUserAuthenticatedResponse) => {
-				console.log(response);
+				if (response.code == 1) {
+					console.log('El usuario se registrado correctamente');
+					this.saveToStorage(response);
+					// TODO: navigate to users info
+				} else {
+					console.log('El usuario no existe !!');
+				}
 			});
 	}
 
@@ -58,15 +65,14 @@ export class AuthService extends GenericService {
 			.post<IUserAuthenticatedResponse>(
 				`${this.endPoint}/register`,
 				model,
-				{
-					headers: this.getHeaders(),
-				}
+				{ headers: this.getHeaders() }
 			)
 			.subscribe((response: IUserAuthenticatedResponse) => {
 				if (response.code == 1) {
 					this.saveToStorage(response);
-					// TODO: navigate users info page
-					//this.$router.navigate(['']);
+					this.$router.navigate(['']); // to login page
+				} else {
+					console.log('El usuario ya existe !!');
 				}
 			});
 	}
