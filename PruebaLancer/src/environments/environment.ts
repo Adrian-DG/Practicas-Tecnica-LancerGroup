@@ -3,8 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-	api_url: 'https://api.lancergroup.org/likeride/api/',
+	api_url: 'https://api.lancergroup.org/likeride/api',
 	api_key: '123456',
+	country: 'RD',
 	production: false,
 };
 
