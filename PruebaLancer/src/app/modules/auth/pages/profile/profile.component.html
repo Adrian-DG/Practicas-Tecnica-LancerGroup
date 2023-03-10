@@ -1,3 +1,21 @@
-<p>
-  profile works!
-</p>
+<div class="container">
+	<ion-icon
+		style="font-size: 10rem; color: rgb(187, 187, 186)"
+		name="image-outline"
+		*ngIf="!didImageChange"
+	></ion-icon>
+	<div class="profile-image" *ngIf="didImageChange">
+		<ion-img [src]="imageUrl"></ion-img>
+	</div>
+	<ion-text
+		style="width: 80%; text-align: center; font-weight: 500; color: gray"
+	>
+		Te sugerimos escojas una imagen para completar tu perfil.
+	</ion-text>
+	<ion-button style="width: 60%" (click)="getPicture()" color="medium">
+		<span style="padding-left: 0.5em">Seleccionar Imagen</span>
+	</ion-button>
+	<ion-button style="width: 60%" color="success" [disabled]="!didImageChange"
+		>Completar Registro</ion-button
+	>
+</div>

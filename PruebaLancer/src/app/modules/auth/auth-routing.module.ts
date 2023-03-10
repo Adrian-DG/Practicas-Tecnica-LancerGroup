@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormularyComponent } from './pages/formulary/formulary.component';
 import { IndexComponent } from './pages/index/index.component';
 import { LocationComponent } from './pages/location/location.component';
+import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
 		path: '',
 		component: IndexComponent,
 		children: [
+			{ path: 'ingresar', component: LoginComponent },
 			{ path: 'informacion', component: FormularyComponent },
 			{ path: 'ubicacion', component: LocationComponent },
 			{ path: 'perfil', component: ProfileComponent },

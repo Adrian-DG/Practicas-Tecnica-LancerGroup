@@ -11,6 +11,6 @@ export class IndexComponent implements OnInit {
 	constructor(private $router: Router) {}
 
 	ngOnInit() {
-		this.$router.navigateByUrl('/registro/informacion');
+		// this.$router.navigateByUrl('/registro/informacion');
 	}
 }

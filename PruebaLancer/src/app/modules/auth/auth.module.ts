@@ -11,9 +11,16 @@ import { FormularyComponent } from './pages/formulary/formulary.component';
 import { LocationComponent } from './pages/location/location.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
+// Enable camera view on browser throught pwa-elements
+import { enableProdMode, isDevMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+import { LoginComponent } from './pages/login/login.component';
+
 @NgModule({
 	declarations: [
 		IndexComponent,
+		LoginComponent,
 		FormularyComponent,
 		LocationComponent,
 		ProfileComponent,
@@ -29,3 +36,14 @@ import { ProfileComponent } from './pages/profile/profile.component';
 	],
 })
 export class AuthModule {}
+
+if (!isDevMode()) {
+	enableProdMode();
+}
+
+platformBrowserDynamic()
+	.bootstrapModule(AuthModule)
+	.catch((err) => console.log(err));
+
+// Call the element loader after the platform has been bootstrapped
+defineCustomElements(window);

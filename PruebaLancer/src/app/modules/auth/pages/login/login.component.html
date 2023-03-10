@@ -1,0 +1,37 @@
+<ion-card>
+	<ion-card-header>
+		<ion-card-title style="text-align: center"
+			>Iniciar Sesion</ion-card-title
+		>
+		<ion-card-subtitle style="text-align: center"
+			>Estas credenciales son necesarias para acceder a tu cuenta y
+			mantener tu información segura</ion-card-subtitle
+		>
+	</ion-card-header>
+	<ion-card-content>
+		<ion-item>
+			<ion-label>Nombre de Usuario</ion-label>
+			<ion-input [(ngModel)]="usernameInput" maxlength="30"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Contraseña</ion-label>
+			<ion-input
+				[(ngModel)]="passwordInput"
+				type="password"
+				minlength="8"
+				maxlength="16"
+			></ion-input>
+		</ion-item>
+		<br />
+		<ion-button style="width: 100%" color="success" (click)="login()"
+			>Ingresar</ion-button
+		>
+		<br /><br />
+		<ion-button
+			style="width: 100%"
+			color="light"
+			[routerLink]="['/registro/informacion']"
+			>Crear cuenta</ion-button
+		>
+	</ion-card-content>
+</ion-card>
