@@ -17,8 +17,11 @@ export abstract class GenericService {
 	abstract getResource(): string;
 
 	protected getHeaders(): HttpHeaders {
-		const api_key: string = isDevMode() ? Dev.api_key : Prod.api_key;
-		return new HttpHeaders().set('x-api-key', api_key).set('Country', 'RD');
+		const environment = isDevMode() ? Dev : Prod;
+		const { api_key, country } = environment;
+		return new HttpHeaders()
+			.set('x-api-key', api_key)
+			.set('Country', country);
 	}
 
 	constructor(protected $http: HttpClient, protected $storage: Storage) {
