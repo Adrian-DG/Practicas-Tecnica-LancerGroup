@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
 import { IndexComponent } from './pages/index/index.component';
 import { IonicModule } from '@ionic/angular';
@@ -16,6 +16,7 @@ import { enableProdMode, isDevMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 import { LoginComponent } from './pages/login/login.component';
+import { UserDataComponent } from './pages/user-data/user-data.component';
 
 @NgModule({
 	declarations: [
@@ -24,6 +25,7 @@ import { LoginComponent } from './pages/login/login.component';
 		FormularyComponent,
 		LocationComponent,
 		ProfileComponent,
+		UserDataComponent,
 	],
 	imports: [
 		CommonModule,

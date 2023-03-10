@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraResultType } from '@capacitor/camera';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
 	selector: 'app-profile',
@@ -11,14 +12,13 @@ export class ProfileComponent implements OnInit {
 
 	didImageChange: boolean = false;
 
-	constructor() {}
+	constructor(private _auth: AuthService) {}
 
 	ngOnInit() {}
 
 	private saveToBase64(imageBase64: string | undefined): void {
 		if (imageBase64) {
-			localStorage.removeItem('userProfilePic');
-			localStorage.setItem('userProfilePic', imageBase64);
+			this._auth.userInfoTemp.userProfilePic = imageBase64;
 		}
 	}
 
@@ -32,5 +32,9 @@ export class ProfileComponent implements OnInit {
 		this.saveToBase64(image.base64String);
 		this.imageUrl = image.webPath ?? '';
 		this.didImageChange = true;
+	}
+
+	completeRegistration(): void {
+		this._auth.registerUser();
 	}
 }

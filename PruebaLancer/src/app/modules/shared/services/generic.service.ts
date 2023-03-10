@@ -11,7 +11,7 @@ import { Storage } from '@ionic/storage-angular';
 })
 export abstract class GenericService {
 	protected endPoint!: string;
-	protected storage: Storage | null = null;
+	protected _storage: Storage | null = null;
 
 	// Refers to controller name on backend
 	abstract getResource(): string;
@@ -25,14 +25,13 @@ export abstract class GenericService {
 	}
 
 	constructor(protected $http: HttpClient, protected $storage: Storage) {
-		this.endPoint += `${
+		this.endPoint = `${
 			isDevMode() ? Dev.api_url : Prod.api_url
 		}/${this.getResource()}`;
-
 		this.initStorage();
 	}
 
 	private async initStorage(): Promise<void> {
-		this.storage = await this.$storage.create();
+		this._storage = await this.$storage.create();
 	}
 }

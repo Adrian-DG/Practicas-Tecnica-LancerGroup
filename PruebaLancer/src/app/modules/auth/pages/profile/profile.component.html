@@ -15,7 +15,11 @@
 	<ion-button style="width: 60%" (click)="getPicture()" color="medium">
 		<span style="padding-left: 0.5em">Seleccionar Imagen</span>
 	</ion-button>
-	<ion-button style="width: 60%" color="success" [disabled]="!didImageChange"
+	<ion-button
+		style="width: 60%"
+		color="success"
+		[disabled]="!didImageChange"
+		(click)="completeRegistration()"
 		>Completar Registro</ion-button
 	>
 </div>

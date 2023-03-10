@@ -8,6 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { error } from 'console';
 import { IUserRegister } from '../../DTO/iuser-register';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
 	selector: 'app-formulary',
@@ -15,7 +16,11 @@ import { IUserRegister } from '../../DTO/iuser-register';
 	styleUrls: ['./formulary.component.scss'],
 })
 export class FormularyComponent implements OnInit {
-	constructor(private $fb: FormBuilder, private $router: Router) {}
+	constructor(
+		private $fb: FormBuilder,
+		private $router: Router,
+		private _auth: AuthService
+	) {}
 
 	registerForm!: FormGroup;
 
@@ -60,22 +65,20 @@ export class FormularyComponent implements OnInit {
 
 	saveUserInfo(): void {
 		// TODO: save to LocalStorage
-		// const { name, lastname, phoneNumber, email, password } =
-		// 	this.registerForm.value;
+		const { name, lastname, phoneNumber, email, password } =
+			this.registerForm.value;
 
-		// const userInfo: IUserRegister = {
-		// 	userName: `${name}_${lastname}`,
-		// 	userPhoneNumber: phoneNumber,
-		// 	userEmail: email,
-		// 	userPassword: password,
-		// 	type: 1,
-		// 	userProfilePic: null,
-		// 	answer: 'UBER',
-		// };
+		const userInfo: IUserRegister = {
+			userName: `${name}_${lastname}`,
+			userPhoneNumber: phoneNumber,
+			userEmail: email,
+			userPassword: password,
+			type: 1,
+			userProfilePic: null,
+			answer: 'UBER',
+		};
 
-		// for (const [key, value] of Object.entries(userInfo)) {
-		// 	localStorage.setItem(key, value);
-		// }
+		this._auth.userInfoTemp = userInfo;
 
 		this.$router.navigate(['registro/ubicacion']);
 	}
