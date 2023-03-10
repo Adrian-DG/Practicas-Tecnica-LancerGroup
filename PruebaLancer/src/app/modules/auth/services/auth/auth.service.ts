@@ -6,6 +6,7 @@ import { IUserAuthenticatedResponse } from '../../responses/iuser-authenticated-
 
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
+import { IUserLogin } from '../../DTO/iuser-login';
 
 @Injectable({
 	providedIn: 'root',
@@ -39,6 +40,17 @@ export class AuthService extends GenericService {
 
 			await this.storage?.set(propKey, propValue);
 		}
+	}
+
+	loginUser(model: IUserLogin): void {
+		this.$http
+			.post<IUserAuthenticatedResponse>(
+				`${this.endPoint}/Get_ToketLogin`,
+				model
+			)
+			.subscribe((response: IUserAuthenticatedResponse) => {
+				console.log(response);
+			});
 	}
 
 	registerUser(model: IUserRegister): void {
