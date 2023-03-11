@@ -16,7 +16,6 @@ import { enableProdMode, isDevMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 import { LoginComponent } from './pages/login/login.component';
-import { UserDataComponent } from './pages/user-data/user-data.component';
 
 @NgModule({
 	declarations: [
@@ -25,7 +24,6 @@ import { UserDataComponent } from './pages/user-data/user-data.component';
 		FormularyComponent,
 		LocationComponent,
 		ProfileComponent,
-		UserDataComponent,
 	],
 	imports: [
 		CommonModule,

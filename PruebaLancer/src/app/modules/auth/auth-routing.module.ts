@@ -5,7 +5,6 @@ import { IndexComponent } from './pages/index/index.component';
 import { LocationComponent } from './pages/location/location.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { UserDataComponent } from './pages/user-data/user-data.component';
 
 const routes: Routes = [
 	{
@@ -16,7 +15,7 @@ const routes: Routes = [
 			{ path: 'informacion', component: FormularyComponent },
 			{ path: 'ubicacion', component: LocationComponent },
 			{ path: 'imagen', component: ProfileComponent },
-			{ path: 'profile', component: UserDataComponent },
+			{ path: '', redirectTo: 'ingresar', pathMatch: 'full' },
 		],
 	},
 ];

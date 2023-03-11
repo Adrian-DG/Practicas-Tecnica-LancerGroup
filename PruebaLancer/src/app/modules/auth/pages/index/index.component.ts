@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-index',
@@ -8,9 +7,7 @@ import { Router } from '@angular/router';
 })
 export class IndexComponent implements OnInit {
 	allowBackButton: boolean = false;
-	constructor(private $router: Router) {}
+	constructor() {}
 
-	ngOnInit() {
-		// this.$router.navigateByUrl('/registro/informacion');
-	}
+	ngOnInit() {}
 }

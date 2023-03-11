@@ -20,6 +20,6 @@ export class GeolocationService {
 			latitude: latitude,
 			longitude: longitude,
 		};
-		await this._auth.saveToStorage(coordinates);
+		this._auth.saveLocationToStorage(coordinates);
 	}
 }

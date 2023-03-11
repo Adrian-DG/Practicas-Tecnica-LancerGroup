@@ -1,7 +1,7 @@
 import { IUser } from '../entities/iuser';
 
-export interface IUserAuthenticatedResponse extends IUser {
+export interface IUserAuthenticatedResponse {
 	token: string;
-	user: IUser;
+	User: IUser;
 	code: number;
 }

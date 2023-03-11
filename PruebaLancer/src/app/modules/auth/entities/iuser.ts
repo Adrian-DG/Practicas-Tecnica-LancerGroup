@@ -1,7 +1,8 @@
 export interface IUser {
 	userId: number | null;
-	customerName: string;
+	custumerName: string;
 	profilePic: string;
+	status: string;
 	userEmail: string;
 	phoneNumber: string;
 	ReservationHistory: any[];
